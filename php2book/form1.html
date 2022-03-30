@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>chapter1</title>
+</head>
+
+<body>
+  <form method="POST" 
+        action="form1.php" 
+        style="display:flex; flex-direction: column; align-items: 
+        flex-start; border:2px solid black; padding: 2px;">
+    Введите логин: <input type="text" name="login" />
+    Введите пароль: <input type="password" name="pass" />
+
+    <!-- Введите почтовый индекс: <input type="text" name="code" />
+    Ваш город: <input type="text" name="city" />
+    Ваш телефон: <input type="tel" name="tel" />
+    Ваш номер карты: <input type="number" name="num" placeholder="0000 0000 0000 0000" />
+    
+    Коментарий: <textarea type="text" name="com" cols="40"
+      rows="9">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique quis animi sunt ullam laudantium harum nihil itaque reprehenderit nesciunt id culpa, dicta esse, modi laborum nemo illo? Aut nostrum hic praesentium </textarea>
+    <br /> -->
+    <button type="submit">проверка регистрации учетки на form1.php</button>
+  </form >
+  <!-- action используется стандартно, для всех кнопок -->
+  <form method="POST" 
+        action="form2.php"  
+        style="display:flex; flex-direction: column; align-items: flex-start; ">
+    <span class="frend"> My frend Raccoon Rocket</span>
+    <button type="radio"  name="cat">Работа со значениями form2.php</button>
+    <!-- formaction используеться для конекретной кнопки -->
+    <button type="radio" formaction="form3.php" name="#">работа с массивами form3.php</button>
+    <button type="radio" formaction="form4.php" name="#">сортировка массивов form4.php</button>
+    <button type="radio" formaction="form5.php" name="#">многомерные массивы form5.php</button>
+    <button type="radio" formaction="../function/function.php" name="#">функции function.php</button>
+    <button type="radio" name="boar">boar form2.php</button>
+    <button type="radio" formaction="../function/func_class.php" name="#">Классы основы! func_class.php</button>
+    <button type="radio" formaction="../function/func_class_extend.php" name="#">Классы основы_расшиерние! func_class_extend.php</button>
+  </form>
+  <form method="POST"
+        style="display:flex; flex-direction: column; align-items: 
+        flex-start; border:2px solid black; padding: 2px; ">
+  <input name="file_img" type="file" accept="image/jpeg,image/png,image/gif"/>
+    введите ширину картинки: <input name="wight_img"
+                                    type="range" 
+                                    id="example1"
+                                    min="1"
+                                    max="150"
+                                    step="1"
+                                onchange="textbox1.value = example1.value" />    <!--  связка ползунка с текстовым отображением -->
+    <input id="textbox1" type="text" />
+    введите высоту картинки: <input name="heigth_img"
+                                    type="range" 
+                                    id="example2"
+                                    min="1"
+                                    max="150"
+                                    step="1"
+                                    onchange="textbox2.value = example2.value" />
+    <input id="textbox2" type="text" />
+
+    <button type="radio" formaction="../function/func_task.php" 
+            name="goose">самостоятельная работа <br>отправить параметры
+            <br>(independet work) func_task.php</button>
+  </form>
+
+</body>
+
+</html>
