@@ -17,10 +17,28 @@ use Entree as GlobalEntree;
             return in_array($ingredient, $this->ingredients);
         }
     }
+    //подкласс
+    class ComboMeal extends Entree{
+        public function hasIngredient($ing){
+            foreach ($this->ingredients as $entree){
+                if ($entree->hasIngredient($ing)){
+                    return true;
+                }
+            }
+            return false;
+        }
+    }
+    //new dish
     $soup = new Entree('Chicken Soup', ['chicken', 'water']);
     $sandwich = new Entree('Chicken Sandwich', ['chicken', 'bread']);
-    
-    
-
+    //combo dish
+    $combo = new ComboMeal('Soup + Sandwich', [$soup, $sandwich]);
+    //available ingredients
+    $reserves = ['chicken', 'pickles', 'water'];
+    foreach($reserves as $ing){
+       if ($combo->hasIngredient($ing)){ 
+           print "Something in the combo contains $ing.<br>";
+        }
+    }
 
 ?>
