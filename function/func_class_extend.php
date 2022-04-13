@@ -19,6 +19,16 @@ use Entree as GlobalEntree;
     }
     //подкласс
     class ComboMeal extends Entree{
+        public function __construct($name, $entrees){
+            parent::__construct($name, $entrees);
+            foreach ($entrees as $entree){
+                if (! $entree instanceof Entree){//является ли обьект экземпляром указанного класса 
+                    throw new Exception(
+                        'Elements of $entrees must be Entree objects');
+                }
+            }
+        }
+
         public function hasIngredient($ing){
             foreach ($this->ingredients as $entree){
                 if ($entree->hasIngredient($ing)){
@@ -40,5 +50,6 @@ use Entree as GlobalEntree;
            print "Something in the combo contains $ing.<br>";
         }
     }
+
 
 ?>
